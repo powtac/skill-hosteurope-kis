@@ -1,0 +1,36 @@
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+~$*
+
+# Python/tool caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local secrets and environment
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local HostEurope inventory artifacts
+inventory/
+notes/
+*.csv
+*.xlsx
+*.pdf
+*.zone.txt
