@@ -1,4 +1,4 @@
 interface:
   display_name: "HostEurope KIS"
-  short_description: "HostEurope/KIS inventory and change prep"
+  short_description: "HostEurope KIS inventory, changes and SSL certificates"
   default_prompt: "Use $hosteurope-kis to inventory HostEurope/KIS contracts, domains, DNS, mailboxes, SSL, terms, costs, and cancellation windows."

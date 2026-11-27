@@ -5,7 +5,7 @@ Use when the user opens HostEurope/KIS in the in-app browser and logs in themsel
 ## Login Boundary
 
 - Let the user handle login, 2FA, consent, and account selection.
-- Never ask for or store credentials, cookies, session/local storage, 2FA/TAN values, recovery codes, API keys, private keys, or mailbox passwords.
+- Never ask for or store account credentials, cookies, session/local storage, 2FA/TAN values, recovery codes, API keys, or mailbox passwords. For an authorized certificate upload, use the file-handling steps in [the SSL workflow](ssl-certificates.md).
 - If secret-like values appear, do not copy them. Ask the user to hide or rotate them when appropriate.
 
 ## Read-Only Work
@@ -14,7 +14,7 @@ Use when the user opens HostEurope/KIS in the in-app browser and logs in themsel
 - Extract contracts, domains, DNS, mail, SSL, invoices, renewals, costs, and visible statuses.
 - Use only read-only navigation, details, pagination, search/filter, and exports requested by the user.
 - Use `support-resources.md` for public terminology, outage, support, and procedure checks.
-- Ask the user to navigate when the next step may reveal secrets or change state.
+- Ask the user to navigate when the next step may reveal secrets. For authorized state changes, follow the applicable workflow.
 
 ## Local Inventory
 
@@ -79,7 +79,7 @@ Do not store raw HTML, screenshots, invoices, exports, full payment data, or unn
 
 ## Risky Pages
 
-Stop before controls or flows involving cancellation, deletion, transfer, auth-code, contract change, downgrade, order, paid add-on, renewal, save/apply, DNS edit, mail deletion, password reset, SSL revoke, or nameserver change.
+Stop before committing a cancellation, deletion, transfer, auth-code action, contract change, downgrade, order, paid add-on, renewal, DNS edit, mail deletion, password reset, SSL change, or nameserver change. A change form can be opened for preparation when doing so neither reveals secrets nor submits the form.
 
 Risk words include `Speichern`, `Löschen`, `Kündigen`, `Transfer`, `Bestellen`, `Kostenpflichtig`, `Aktivieren`, `Deaktivieren`, `Zurücksetzen`, and `Absenden`.
 

@@ -1,6 +1,6 @@
 ---
 name: hosteurope-kis
-description: Help administer HostEurope / KIS hosting accounts and contracts. Use for inventories, contract/domain/DNS/mail/SSL reviews, costs, renewal dates, cancellation windows, local inventory files, and explicitly confirmed preparation of cancellations, transfers, DNS, mailbox, SSL, or product changes.
+description: Administer Host Europe hosting in KIS. Inventory contracts, domains, DNS and mail, review costs, renewals and cancellation windows, and prepare hosting changes. Verify live HTTPS, issue Let's Encrypt certificates locally (including wildcard), and install or replace custom certificates in KIS or cPanel with explicit authorization.
 ---
 
 # HostEurope KIS
@@ -15,7 +15,8 @@ Reply to the user in German by default unless they clearly use another language.
 
 ## Hard Rules
 
-- Never ask for, store, copy, summarize, or expose passwords, cookies, session tokens, 2FA codes, TANs, recovery codes, API keys, or other credentials.
+- Never ask for, store, copy, summarize, or expose passwords, cookies, session tokens, 2FA codes, TANs, recovery codes, API keys, or other account credentials.
+- For authorized certificate issuance, let the local ACME client generate and handle key files in a private directory. Use the confirmed hosting provider's file upload or hand off key entry to the user. Keep key contents out of chat, logs, inventories and clipboard.
 - The user must log in to HostEurope/KIS themselves in the Codex in-app browser.
 - Do not inspect login fields, credential stores, cookies, local storage, or session tokens.
 - Default to read-only. Reading, extracting, reconciling, and summarizing account state is allowed.
@@ -71,6 +72,14 @@ Use only for preparing actions such as cancellation, domain transfer, DNS migrat
 
 Checklists when needed: `references/change-checklists.md`.
 
+### SSL/TLS certificates
+
+Use [the SSL workflow](references/ssl-certificates.md) to inspect the HTTPS endpoint, issue a certificate locally, or install and verify a custom certificate. A feasibility question permits read-only checks. For implementation, cover new ACME account terms if applicable, temporary DNS records and cleanup, and installation in one confirmation if those actions still need approval. Continue the confirmed workflow without requesting the same authorization again.
+
+### Webspace deployment via FTP
+
+Use [the FTP workflow](references/ftp-deployment.md) for FTP account lookup and explicitly requested website uploads. Verify the domain-to-directory mapping and the selected account's start directory before uploading.
+
 ## Evidence And Local Files
 
 - Prefer structured sources: CSV, XLSX, JSON, zone files, PDF invoices, and KIS exports.
@@ -96,7 +105,7 @@ Keep KIS UI terms exactly as shown. Do not merge distinct KIS fields into one ge
 
 - `Vertrags- Übersicht`: Vertrag/Produkt, Abrechnung, Betrag, Laufzeitoptionen, `Änderbar Bis`.
 - `Domainservices` -> `Bestehende Domains bearbeiten`: Domains und Produktzuordnung. Spalte `Produkt` ist nicht automatisch Domainstatus.
-- `Domainservices` -> `Nameserver / DNS-Einträge bearbeiten`: AutoDNS und Records. Nur lesen, nicht speichern/löschen.
+- `Domainservices` -> `Nameserver / DNS-Einträge bearbeiten`: AutoDNS and records. For reviews, read only. For authorized ACME TXT changes, follow the SSL workflow.
 - `Domain & Mail`, `Webhosting`, `cPanel WebHosting`, `Email`: produktspezifische Verwaltung.
 - Mail-Statistiken können gecacht sein. Wenn Quota/Nutzung wichtig ist, sichtbare Aktualisierung nutzen und Quelle/Zeitpunkt notieren.
 - `E-Mail-Konto` ist das Postfach mit Speicher/Quota/Passwort. `E-Mail-Adresse` ist die routbare Adresse, die in ein Postfach, an externe Ziele oder beides zustellen kann.

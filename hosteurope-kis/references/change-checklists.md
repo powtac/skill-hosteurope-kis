@@ -48,7 +48,7 @@ Confirmation pattern:
 - Identify domains/SANs, bound product/vhost, issuer, expiry, and auto-renewal.
 - Check DNS or HTTP validation needs.
 - Confirm renewal/change will not break vhosts or redirects.
-- Prepare install/renew steps and post-change checks.
+- For local issuance, temporary DNS authorization, upload, renewal and live SNI verification, follow [the SSL workflow](ssl-certificates.md).
 
 ## Final Preflight
 
