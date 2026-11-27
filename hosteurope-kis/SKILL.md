@@ -74,7 +74,7 @@ Checklists when needed: `references/change-checklists.md`.
 
 ### SSL/TLS certificates
 
-Use [the SSL workflow](references/ssl-certificates.md) to inspect the HTTPS endpoint, issue a certificate locally, or install and verify a custom certificate. A feasibility question permits read-only checks. For implementation, cover new ACME account terms if applicable, temporary DNS records and cleanup, and installation in one confirmation if those actions still need approval. Continue the confirmed workflow without requesting the same authorization again.
+Use [the SSL workflow](references/ssl-certificates.md) to inspect the HTTPS endpoint, issue a certificate locally, or install and verify a custom certificate. After a verified installation requiring manual renewal, create the one-time renewal reminder described there. A feasibility question permits read-only checks. For implementation, cover new ACME account terms if applicable, temporary DNS records and cleanup, and installation in one confirmation if those actions still need approval. Continue the confirmed workflow without requesting the same authorization again.
 
 ### Webspace deployment via FTP
 
